@@ -306,6 +306,22 @@ footer .logo img{height:54px}
  .hero-img img{object-position:50% 64%}
 }
 
+
+/* v5: desktop stacked hero (photo on top, text below) */
+@media (min-width:961px){
+ .hero{height:auto;min-height:0;display:block;padding-bottom:70px}
+ .hero::after{display:none}
+ .hero-img{position:relative;inset:auto;left:auto;height:80vh;min-height:540px;max-height:860px}
+ .hero-img::before{display:none}
+ .hero-img img{object-position:50% 64%}
+ .hero-img::after{content:"";position:absolute;inset:0;background:
+   linear-gradient(180deg,rgba(6,7,8,.92) 0%,rgba(6,7,8,.4) 12%,rgba(6,7,8,0) 26%),
+   linear-gradient(0deg,var(--bg) 0%,rgba(6,7,8,.8) 14%,rgba(6,7,8,0) 40%)}
+ .hero-content{margin-top:-90px}
+ .hero h1{font-size:clamp(3.4rem,7vw,6.6rem)}
+ .scrollcue{display:none}
+}
+
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero-hex path{stroke-dashoffset:0}}
 </style>
 </head>
